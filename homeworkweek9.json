@@ -1,0 +1,63 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 800,
+    "height": 600,
+    "projection": {
+      "type": "equirectangular",
+      "scale": 1200,
+      "center": [133.7751, -25.2744],  
+      "clipExtent": [[50, 50], [750, 550]]
+    },
+    "layer": [
+      
+      {
+        "data": {
+          "url": "https://raw.githubusercontent.com/vega/vega-datasets/master/data/aus-10m.json",
+          "format": {
+            "type": "topojson",
+            "feature": "states"
+          }
+        },
+        "mark": {
+          "type": "geoshape",
+          "fill": "lightgray",  
+          "stroke": "black",  
+          "strokeWidth": 2  
+        }
+      },
+      
+      {
+        "data": {
+          "values": [
+            {"city1": "ADELAIDE", "city2": "SYDNEY", "passengers": 15000, "lat1": -34.9285, "lon1": 138.6007, "lat2": -33.8688, "lon2": 151.2093},
+            {"city1": "MELBOURNE", "city2": "BRISBANE", "passengers": 30000, "lat1": -37.8136, "lon1": 144.9631, "lat2": -27.4698, "lon2": 153.0251},
+            {"city1": "SYDNEY", "city2": "MELBOURNE", "passengers": 50000, "lat1": -33.8688, "lon1": 151.2093, "lat2": -37.8136, "lon2": 144.9631},
+            {"city1": "BRISBANE", "city2": "PERTH", "passengers": 20000, "lat1": -27.4698, "lon1": 153.0251, "lat2": -31.9505, "lon2": 115.8605},
+            {"city1": "ADELAIDE", "city2": "PERTH", "passengers": 18000, "lat1": -34.9285, "lon1": 138.6007, "lat2": -31.9505, "lon2": 115.8605},
+            {"city1": "PERTH", "city2": "DARWIN", "passengers": 12000, "lat1": -31.9505, "lon1": 115.8605, "lat2": -12.4634, "lon2": 130.8456},
+            {"city1": "DARWIN", "city2": "SYDNEY", "passengers": 16000, "lat1": -12.4634, "lon1": 130.8456, "lat2": -33.8688, "lon2": 151.2093},
+            {"city1": "CANBERRA", "city2": "SYDNEY", "passengers": 22000, "lat1": -35.2809, "lon1": 149.1300, "lat2": -33.8688, "lon2": 151.2093},
+            {"city1": "MELBOURNE", "city2": "GOLD COAST", "passengers": 17000, "lat1": -37.8136, "lon1": 144.9631, "lat2": -28.0167, "lon2": 153.4000},
+            {"city1": "BRISBANE", "city2": "TOWNSVILLE", "passengers": 8000, "lat1": -27.4698, "lon1": 153.0251, "lat2": -19.2589, "lon2": 146.8169}
+          ]
+        },
+        "mark": {
+          "type": "rule",
+          "color": "red",  
+          "strokeWidth": 2  
+        },
+        "encoding": {
+          "longitude": {"field": "lon1", "type": "quantitative"},
+          "latitude": {"field": "lat1", "type": "quantitative"},
+          "longitude2": {"field": "lon2"},
+          "latitude2": {"field": "lat2"},
+          "tooltip": [
+            {"field": "city1", "title": "From"},
+            {"field": "city2", "title": "To"},
+            {"field": "passengers", "title": "Passenger Volume"}
+          ]
+        }
+      }
+    ]
+  }
+  
