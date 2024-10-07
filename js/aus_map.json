@@ -1,0 +1,30 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Map of Australia with graticule grid.",
+    "title": "Australia Map with Graticule",
+    "width": 800,
+    "height": 600,
+    "layer": [
+      {
+        "data": {
+          "url": "https://vega.github.io/vega-datasets/data/world-110m.json",
+          "format": {"type": "topojson", "feature": "countries"}
+        },
+        "transform": [
+          {"filter": "datum.id == '36'"} 
+        ],
+        "mark": {
+          "type": "geoshape",
+          "fill": "lightgrey",
+          "stroke": "black",
+          "strokeWidth": 1
+        },
+        "projection": {"type": "mercator", "center": [134, -25], "scale": 1000}
+      },
+      {
+        "data": {"graticule": true},
+        "mark": {"type": "geoshape", "stroke": "grey", "strokeWidth": 0.5}
+      }
+    ],
+    "projection": {"type": "mercator", "center": [134, -25], "scale": 1000}
+  }
