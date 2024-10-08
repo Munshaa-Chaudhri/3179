@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Australian Airports Visualization</title>
+    <!-- Vega and Vega-Lite Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+<body>
+    <h1>Map of Australian Airports</h1>
+    <!-- Container for the Visualization -->
+    <div id="vis"></div>
+
+    <!-- Embed Vega-Lite Spec -->
+    <script type="text/javascript">
+        var spec = {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "description": "Map of Australian Airports: Color Represents Airport Type, Size Corresponds to Airport Size",
+            "width": 800,
+            "height": 600,
+            "title": "Australian Airports with Filters",
+            "layer": [
+                {
+                    "data": {
+                        "url": "https://vega.github.io/vega-datasets/data/world-110m.json",
+                        "format": {"type": "topojson", "feature": "countries"}
+                    },
+                    "transform": [{"filter": "datum.id == '36'"}],
+                    "mark": {"type": "geoshape", "fill": "lightgrey", "stroke": "black", "strokeWidth": 1},
+                    "projection": {"type": "mercator", "center": [134, -25], "scale": 1200}  // Adjusted projection
+                },
+                {
+                    "data": {
+                        "values": [
+                            {
+                                "name": "Canberra International Airport",
+                                "latitude_deg": -35.3069,
+                                "longitude_deg": 149.195007,
+                                "elevation_ft": 1886.0,
+                                "type": "medium_airport",
+                                "marker_size": 30
+                            },
+                            {
+                                "name": "Sydney Kingsford Smith International Airport",
+                                "latitude_deg": -33.946098,
+                                "longitude_deg": 151.177002,
+                                "elevation_ft": 21.0,
+                                "type": "large_airport",
+                                "marker_size": 60
+                            },
+                            {
+                                "name": "Newcastle Airport",
+                                "latitude_deg": -32.79499816894531,
+                                "longitude_deg": 151.83399963378906,
+                                "elevation_ft": 31.0,
+                                "type": "medium_airport",
+                                "marker_size": 30
+                            },
+                            {
+                                "name": "Ballina Byron Gateway Airport",
+                                "latitude_deg": -28.833236,
+                                "longitude_deg": 153.561471,
+                                "elevation_ft": 7.0,
+                                "type": "medium_airport",
+                                "marker_size": 30
+                            }
+                        ]
+                    },
+                    "selection": {
+                        "AirportType": {
+                            "type": "multi",
+                            "fields": ["type"],
+                            "bind": {"input": "select", "options": ["small_airport", "medium_airport", "large_airport"], "name": "Select Airport Type: "}
+                        }
+                    },
+                    "transform": [{"filter": {"selection": "AirportType"}}],
+                    "mark": "circle",
+                    "encoding": {
+                        "longitude": {"field": "longitude_deg", "type": "quantitative"},
+                        "latitude": {"field": "latitude_deg", "type": "quantitative"},
+                        "size": {"field": "marker_size", "type": "quantitative"},
+                        "color": {"field": "type", "type": "nominal", "legend": {"title": "Airport Type"}},
+                        "tooltip": [
+                            {"field": "name", "type": "nominal", "title": "Airport Name"},
+                            {"field": "type", "type": "nominal", "title": "Type"},
+                            {"field": "elevation_ft", "type": "quantitative", "title": "Elevation (ft)"}
+                        ]
+                    }
+                },
+                {
+                    "mark": {"type": "text", "align": "left", "dx": 5, "dy": -5, "fontSize": 12},
+                    "encoding": {
+                        "text": {"value": "Sydney Kingsford Smith International"},
+                        "longitude": {"value": 151.177002},
+                        "latitude": {"value": -33.946098},
+                        "color": {"value": "black"}
+                    }
+                }
+            ]
+        };
+
+        // Embed the visualization in the container with ID "vis"
+        vegaEmbed('#vis', spec).then(function(result) {
+            // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+        }).catch(console.error);
+    </script>
+</body>
+</html>

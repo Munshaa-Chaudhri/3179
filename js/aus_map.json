@@ -19,7 +19,7 @@
           "stroke": "black",
           "strokeWidth": 1
         },
-        "projection": {"type": "mercator", "center": [134, -25], "scale": 1000}
+        "projection": {"type": "mercator", "center": [134, -25], "scale": 700}
       },
       {
         "data": {"graticule": true},
