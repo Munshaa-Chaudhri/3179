@@ -1,0 +1,263 @@
+</script>
+
+<!-- Visualization 4: Passenger Trips by Year -->
+<h2>4. Passenger Trips by Year</h2>
+<div id="vis4"></div>
+<script type="text/javascript">
+  vegaEmbed('#vis4', {
+    "data": {"url": "audomcitypairs-201912.csv"},
+    "mark": "line",
+    "encoding": {
+      "x": {"field": "Year", "type": "temporal"},
+      "y": {"field": "Passenger_Trips", "type": "quantitative", "aggregate": "sum"},
+      "color": {"field": "City1", "type": "nominal"}
+    }
+  });
+</script>
+
+<!-- Visualization 5: Aircraft Trips Over Time -->
+<h2>5. Aircraft Trips Over Time</h2>
+<div id="vis5"></div>
+<script type="text/javascript">
+  vegaEmbed('#vis5', {
+    "data": {"url": "audomcitypairs-201912.csv"},
+    "mark": "line",
+    "encoding": {
+      "x": {"field": "Year", "type": "temporal"},
+      "y": {"field": "Aircraft_Trips", "type": "quantitative", "aggregate": "sum"},
+      "color": {"field": "City1", "type": "nominal"}
+    }
+  });
+</script>
+
+<!-- Visualization 6: Load Factor Over Time -->
+<h2>6. Load Factor Over Time</h2>
+<div id="vis6"></div>
+<script type="text/javascript">
+  vegaEmbed('#vis6', {
+    "data": {"url": "audomcitypairs-201912.csv"},
+    "mark": "line",
+    "encoding": {
+      "x": {"field": "Year", "type": "temporal"},
+      "y": {"field": "Passenger_Load_Factor", "type": "quantitative", "aggregate": "mean"},
+      "color": {"field": "City1", "type": "nominal"}
+    }
+  });
+</script>
+
+<!-- Visualization 7: Average Passenger Load Factor by City Pair -->
+<h2>7. Average Passenger Load Factor by City Pair</h2>
+<div id="vis7"></div>
+<script type="text/javascript">
+  vegaEmbed('#vis7', {
+    "data": {"url": "audomcitypairs-201912.csv"},
+    "mark": "rect",
+    "encoding": {
+      "x": {"field": "City1", "type": "nominal"},
+      "y": {"field": "City2", "type": "nominal"},
+      "color": {"field": "Passenger_Load_Factor", "type": "quantitative", "aggregate": "mean"}
+    }
+  });
+</script>
+
+<!-- Visualization 8: Passenger Trips vs. Load Factor -->
+<h2>8. Passenger Trips vs. Load Factor</h2>
+<div id="vis8"></div>
+<script type="text/javascript">
+  vegaEmbed('#vis8', {
+    "data": {"url": "audomcitypairs-201912.csv"},
+    "mark": "point",
+    "encoding": {
+      "x": {"field": "Passenger_Trips", "type": "quantitative"},
+      "y": {"field": "Passenger_Load_Factor", "type": "quantitative"},
+      "color": {"field": "City1", "type": "nominal"}
+    }
+  });
+</script>
+
+<!-- Visualization 9: RPKs by City Pair -->
+<h2>9. RPKs by City Pair</h2>
+<div id="vis9"></div>
+<script type="text/javascript">
+  vegaEmbed('#vis9', {
+    "data": {"url": "audomcitypairs-201912.csv"},
+    "mark": "bar",
+    "encoding": {
+      "x": {"field": "RPKs", "type": "quantitative", "aggregate": "sum"},
+      "y": {"field": "City1", "type": "nominal", "sort": "-x"},
+      "color": {"field": "City2", "type": "nominal"}
+    }
+  });
+</script>
+
+<!-- Visualization 10: ASKs by City Pair -->
+<h2>10. ASKs by City Pair</h2>
+<div id="vis10"></div>
+<script type="text/javascript">
+  vegaEmbed('#vis10', {
+    "data": {"url": "audomcitypairs-201912.csv"},
+    "mark": "bar",
+    "encoding": {
+      "x": {"field": "ASKs", "type": "quantitative", "aggregate": "sum"},
+      "y": {"field": "City1", "type": "nominal", "sort": "-x"},
+      "color": {"field": "City2", "type": "nominal"}
+    }
+  });
+</script>
+
+<!-- Visualization 11: Distance Distribution of City Pairs -->
+<h2>11. Distance Distribution of City Pairs</h2>
+<div id="vis11"></div>
+<script type="text/javascript">
+  vegaEmbed('#vis11', {
+    "data": {"url": "audomcitypairs-201912.csv"},
+    "mark": "bar",
+    "encoding": {
+      "x": {"field": "Distance_GC_(km)", "type": "quantitative", "bin": true},
+      "y": {"aggregate": "count", "type": "quantitative"}
+    }
+  });
+</script>
+
+<!-- Visualization 12: Seats vs. Load Factor -->
+<h2>12. Seats vs. Load Factor</h2>
+<div id="vis12"></div>
+<script type="text/javascript">
+  vegaEmbed('#vis12', {
+    "data": {"url": "audomcitypairs-201912.csv"},
+    "mark": "circle",
+    "encoding": {
+      "x": {"field": "Seats", "type": "quantitative"},
+      "y": {"field": "Passenger_Load_Factor", "type": "quantitative"},
+      "color": {"field": "City1", "type": "nominal"}
+    }
+  });
+</script>
+
+<!-- Visualization 13: Top 10 City Pairs by Seats -->
+<h2>13. Top 10 City Pairs by Seats</h2>
+<div id="vis13"></div>
+<script type="text/javascript">
+  vegaEmbed('#vis13', {
+    "data": {"url": "audomcitypairs-201912.csv"},
+    "mark": "bar",
+    "encoding": {
+      "x": {"field": "Seats", "type": "quantitative", "aggregate": "sum", "sort": "-x"},
+      "y": {"field": "City1", "type": "nominal", "sort": "-x"},
+      "color": {"field": "City2", "type": "nominal"}
+    },
+    "transform": [{"window": [{"op": "rank", "as": "rank"}], "sort": [{"field": "Seats", "order": "descending"}]}],
+    "transform": [{"filter": "datum.rank <= 10"}]
+  });
+</script>
+
+<!-- Visualization 14: Passenger Trips vs. Distance -->
+<h2>14. Passenger Trips vs. Distance</h2>
+<div id="vis14"></div>
+<script type="text/javascript">
+  vegaEmbed('#vis14', {
+    "data": {"url": "audomcitypairs-201912.csv"},
+    "mark": "circle",
+    "encoding": {
+      "x": {"field": "Distance_GC_(km)", "type": "quantitative"},
+      "y": {"field": "Passenger_Trips", "type": "quantitative"},
+      "color": {"field": "City1", "type": "nominal"}
+    }
+  });
+</script>
+
+<!-- Visualization 15: Monthly Trends in Passenger Trips -->
+<h2>15. Monthly Trends in Passenger Trips</h2>
+<div id="vis15"></div>
+<script type="text/javascript">
+  vegaEmbed('#vis15', {
+    "data": {"url": "audomcitypairs-201912.csv"},
+    "mark": "line",
+    "encoding": {
+      "x": {"field": "Month", "type": "ordinal"},
+      "y": {"field": "Passenger_Trips", "type": "quantitative", "aggregate": "sum"},
+      "color": {"field": "City1", "type": "nominal"}
+    }
+  });
+</script>
+
+<!-- Visualization 16: Monthly Trends in Aircraft Trips -->
+<h2>16. Monthly Trends in Aircraft Trips</h2>
+<div id="vis16"></div>
+<script type="text/javascript">
+  vegaEmbed('#vis16', {
+    "data": {"url": "audomcitypairs-201912.csv"},
+    "mark": "line",
+    "encoding": {
+      "x": {"field": "Month", "type": "ordinal"},
+      "y": {"field": "Aircraft_Trips", "type": "quantitative", "aggregate": "sum"},
+      "color": {"field": "City1", "type": "nominal"}
+    }
+  });
+</script>
+
+<!-- Visualization 17: City Pair with Highest RPKs per Year -->
+<h2>17. City Pair with Highest RPKs per Year</h2>
+<div id="vis17"></div>
+<script type="text/javascript">
+  vegaEmbed('#vis17', {
+    "data": {"url": "audomcitypairs-201912.csv"},
+    "mark": "bar",
+    "encoding": {
+      "x": {"field": "RPK", "type": "quantitative", "aggregate": "sum"},
+      "y": {"field": "Year", "type": "temporal"},
+      "color": {"field": "City1", "type": "nominal"},
+      "tooltip": [{"field": "City2", "type": "nominal"}]
+    }
+  });
+</script>
+
+<!-- Visualization 18: City Pair Load Factor Over Time -->
+<h2>18. City Pair Load Factor Over Time</h2>
+<div id="vis18"></div>
+<script type="text/javascript">
+  vegaEmbed('#vis18', {
+    "data": {"url": "audomcitypairs-201912.csv"},
+    "mark": "line",
+    "encoding": {
+      "x": {"field": "Year", "type": "temporal"},
+      "y": {"field": "Passenger_Load_Factor", "type": "quantitative", "aggregate": "mean"},
+      "color": {"field": "City1", "type": "nominal"}
+    }
+  });
+</script>
+
+<!-- Visualization 19: Seats by City Pair Over Time -->
+<h2>19. Seats by City Pair Over Time</h2>
+<div id="vis19"></div>
+<script type="text/javascript">
+  vegaEmbed('#vis19', {
+    "data": {"url": "audomcitypairs-201912.csv"},
+    "mark": "line",
+    "encoding": {
+      "x": {"field": "Year", "type": "temporal"},
+      "y": {"field": "Seats", "type": "quantitative", "aggregate": "sum"},
+      "color": {"field": "City1", "type": "nominal"}
+    }
+  });
+</script>
+
+<!-- Visualization 20: Comparison of Load Factor and Distance -->
+<h2>20. Comparison of Load Factor and Distance</h2>
+<div id="vis20"></div>
+<script type="text/javascript">
+  vegaEmbed('#vis20', {
+    "data": {"url": "audomcitypairs-201912.csv"},
+    "mark": "point",
+    "encoding": {
+      "x": {"field": "Distance_GC_(km)", "type": "quantitative"},
+      "y": {"field": "Passenger_Load_Factor", "type": "quantitative"},
+      "color": {"field": "City1", "type": "nominal"},
+      "size": {"field": "Passenger_Trips", "type": "quantitative"}
+    }
+  });
+</script>
+
+</body>
+</html>
+

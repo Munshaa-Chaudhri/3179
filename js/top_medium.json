@@ -1,0 +1,43 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Top 10 Medium Airports by Elevation",
+    "title": "Top 10 Medium Airports by Elevation",
+    "data": {
+      "values": [
+        {"name": "Mount Hotham Airport", "elevation_ft": 5000},
+        {"name": "Armidale Airport", "elevation_ft": 4800},
+        {"name": "Glen Innes Airport", "elevation_ft": 4700},
+        {"name": "Orange Airport", "elevation_ft": 4600},
+        {"name": "Coomas Snowy Mountains Airport", "elevation_ft": 4500},
+        {"name": "Inverell Airport", "elevation_ft": 4400},
+        {"name": "Bathurst Airport", "elevation_ft": 4300},
+        {"name": "Goulburn Airport", "elevation_ft": 4200},
+        {"name": "Coonabarabran Airport", "elevation_ft": 4100},
+        {"name": "Canberra International Airport", "elevation_ft": 4000}
+      ]
+    },
+    "mark": "bar",
+    "encoding": {
+      "x": {
+        "field": "elevation_ft",
+        "type": "quantitative",
+        "title": "Elevation (ft)"
+      },
+      "y": {
+        "field": "name",
+        "type": "nominal",
+        "sort": "-x",
+        "title": "Airport Name"
+      },
+      "color": {
+        "field": "elevation_ft",
+        "type": "quantitative",
+        "scale": {"scheme": "blues"}
+      },
+      "tooltip": [
+        {"field": "name", "type": "nominal", "title": "Airport Name"},
+        {"field": "elevation_ft", "type": "quantitative", "title": "Elevation (ft)"}
+      ]
+    }
+  }
+  

@@ -1,0 +1,43 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Top 10 Largest Airports by Elevation",
+    "title": "Top 10 Largest Airports by Elevation",
+    "data": {
+      "values": [
+        {"name": "Charlotte Pass Medical Centre HLS", "elevation_ft": 5752.0},
+        {"name": "Perisher Valley Medical Centre Helipad", "elevation_ft": 5689.0},
+        {"name": "Guthega Helicopter Landing Site", "elevation_ft": 5350.0},
+        {"name": "Snowy Range Airfield", "elevation_ft": 5200.0},
+        {"name": "Cabramurra Helicopter Landing Site", "elevation_ft": 4900.0},
+        {"name": "Horse Hair Plain Aerodrome", "elevation_ft": 4555.0},
+        {"name": "Mount Barrow Helicopter Landing Site", "elevation_ft": 4275.0},
+        {"name": "Mount Hotham Airport", "elevation_ft": 4260.0},
+        {"name": "Bald Hills Airport", "elevation_ft": 4042.0},
+        {"name": "Canobolas Training Area HLS", "elevation_ft": 3949.0}
+      ]
+    },
+    "mark": "bar",
+    "encoding": {
+      "x": {
+        "field": "elevation_ft",
+        "type": "quantitative",
+        "title": "Elevation (ft)"
+      },
+      "y": {
+        "field": "name",
+        "type": "nominal",
+        "sort": "-x",
+        "title": "Airport Name"
+      },
+      "color": {
+        "field": "elevation_ft",
+        "type": "quantitative",
+        "scale": {"scheme": "reds"}
+      },
+      "tooltip": [
+        {"field": "name", "type": "nominal", "title": "Airport Name"},
+        {"field": "elevation_ft", "type": "quantitative", "title": "Elevation (ft)"}
+      ]
+    }
+  }
+  

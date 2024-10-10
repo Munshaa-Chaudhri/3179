@@ -1,0 +1,45 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Top 10 Municipalities by Number of Airports",
+    "title": "Top 10 Municipalities by Number of Airports",
+    "width": 600,
+    "height": 200,
+    "data": {
+      "values": [
+        {"municipality": "Sydney", "num_airports": 12},
+        {"municipality": "Melbourne", "num_airports": 10},
+        {"municipality": "Brisbane", "num_airports": 9},
+        {"municipality": "Perth", "num_airports": 8},
+        {"municipality": "Adelaide", "num_airports": 7},
+        {"municipality": "Darwin", "num_airports": 6},
+        {"municipality": "Gold Coast", "num_airports": 5},
+        {"municipality": "Canberra", "num_airports": 5},
+        {"municipality": "Cairns", "num_airports": 4},
+        {"municipality": "Hobart", "num_airports": 4}
+      ]
+    },
+    "mark": {
+      "type": "line",
+      "point": {"filled": true, "fill": "blue"}
+    },
+    "encoding": {
+      "x": {
+        "field": "municipality",
+        "type": "nominal",
+        "title": "Municipality",
+        "sort": null
+      },
+      "y": {
+        "field": "num_airports",
+        "type": "quantitative",
+        "title": "Number of Airports"
+      },
+      "color": {"value": "blue"},
+      "tooltip": [
+        {"field": "municipality", "type": "nominal", "title": "Municipality"},
+        {"field": "num_airports", "type": "quantitative", "title": "Number of Airports"}
+        
+      ]
+    }
+  }
+  

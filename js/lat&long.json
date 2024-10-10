@@ -1,0 +1,10 @@
+{
+    "data": {"url": "your_file_path_here"},
+    "mark": "bar",
+    "encoding": {
+      "x": {"field": "Passenger_Trips", "type": "quantitative", "aggregate": "sum"},
+      "y": {"field": "City1", "type": "nominal", "sort": "-x"},
+      "color": {"field": "City2", "type": "nominal"}
+    }
+  }
+  

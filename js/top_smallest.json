@@ -1,0 +1,43 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Top 10 Smallest Airports by Elevation",
+    "title": "Top 10 Smallest Airports by Elevation",
+    "data": {
+      "values": [
+        {"name": "Noosa Airport", "elevation_ft": 1.0},
+        {"name": "Abrolhos North Island", "elevation_ft": 1.0},
+        {"name": "Kingston Airport", "elevation_ft": 2.0},
+        {"name": "Redcliffe Airport", "elevation_ft": 2.0},
+        {"name": "Mount Walker airstrip", "elevation_ft": 2.0},
+        {"name": "Camden Haven Airport", "elevation_ft": 2.0},
+        {"name": "Southport Airport", "elevation_ft": 2.0},
+        {"name": "Leeman Airport", "elevation_ft": 2.0},
+        {"name": "Coconut Island Airport", "elevation_ft": 3.0},
+        {"name": "Warraber Island Airport", "elevation_ft": 3.0}
+      ]
+    },
+    "mark": "bar",
+    "encoding": {
+      "x": {
+        "field": "elevation_ft",
+        "type": "quantitative",
+        "title": "Elevation (ft)"
+      },
+      "y": {
+        "field": "name",
+        "type": "nominal",
+        "sort": "-x",
+        "title": "Airport Name"
+      },
+      "color": {
+        "field": "elevation_ft",
+        "type": "quantitative",
+        "scale": {"scheme": "greens"}  
+      },
+      "tooltip": [
+        {"field": "name", "type": "nominal", "title": "Airport Name"},
+        {"field": "elevation_ft", "type": "quantitative", "title": "Elevation (ft)"}
+      ]
+    }
+  }
+  
