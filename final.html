@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map of Australian Airports</title>
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+<body>
+
+    <h1>Map of Australian Airports: Airport Size & Elevation</h1>
+
+    <!-- Div for the map visualization -->
+    <div id="airport-map"></div>
+
+    <script type="text/javascript">
+        const spec = {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "description": "Map of Australia with airport locations, size, and elevation.",
+            "title": "Map of Australian Airports: Airport Size & Elevation",
+            "width": 600,
+            "height": 600,
+            "layer": [
+                {
+                    "data": {
+                        "url": "https://vega.github.io/vega-datasets/data/world-110m.json",
+                        "format": {
+                            "type": "topojson",
+                            "feature": "countries"
+                        }
+                    },
+                    "transform": [
+                        {
+                            "filter": "datum.id == '36'"
+                        }
+                    ],
+                    "mark": {
+                        "type": "geoshape",
+                        "fill": "lightgrey",
+                        "stroke": "black",
+                        "strokeWidth": 1
+                    },
+                    "projection": {
+                        "type": "mercator",
+                        "center": [134, -25],
+                        "scale": 700
+                    }
+                },
+                {
+                    "data": {
+                        "graticule": true
+                    },
+                    "mark": {
+                        "type": "geoshape",
+                        "stroke": "grey",
+                        "strokeWidth": 0.5
+                    }
+                },
+                {
+                    "data": {
+                        "values": [
+                            {
+                                "name": "Sydney Kingsford Smith International Airport",
+                                "latitude_deg": -33.9461,
+                                "longitude_deg": 151.177,
+                                "elevation_ft": 21,
+                                "type": "large_airport",
+                                "marker_size": 90,
+                                "marker_color": "red"
+                            },
+                            {
+                                "name": "Canberra International Airport",
+                                "latitude_deg": -35.3069,
+                                "longitude_deg": 149.195,
+                                "elevation_ft": 1886,
+                                "type": "medium_airport",
+                                "marker_size": 60,
+                                "marker_color": "blue"
+                            },
+                            {
+                                "name": "Jervis Bay Airport",
+                                "latitude_deg": -35.1472,
+                                "longitude_deg": 150.697,
+                                "elevation_ft": 200,
+                                "type": "small_airport",
+                                "marker_size": 30,
+                                "marker_color": "green"
+                            }
+                        ]
+                    },
+                    "mark": "point",
+                    "encoding": {
+                        "longitude": {"field": "longitude_deg", "type": "quantitative"},
+                        "latitude": {"field": "latitude_deg", "type": "quantitative"},
+                        "size": {"field": "marker_size", "type": "quantitative"},
+                        "color": {"field": "marker_color", "type": "nominal"}
+                    }
+                }
+            ]
+        };
+
+        vegaEmbed('#airport-map', spec).catch(console.error);
+    </script>
+    
+</body>
+</html>
