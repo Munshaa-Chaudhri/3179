@@ -1,0 +1,47 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Relationship between Flights and Seats",
+ "height":400,
+ "width":600,
+  "data": {
+    "values": [
+      {"City": "Sydney", "Flights": 362693, "Seats": 800000},
+      {"City": "Melbourne", "Flights": 251282, "Seats": 600000},
+      {"City": "Brisbane", "Flights": 10199, "Seats": 200000},
+      {"City": "Perth", "Flights": 58795, "Seats": 300000},
+      {"City": "Gold Coast", "Flights": 32034, "Seats": 150000}
+    ]
+  },
+  "mark": "point",
+  "encoding": {
+    "x": {
+      "field": "Flights",
+      "type": "quantitative",
+      "axis": {"title": "Total Flights"}
+    },
+    "y": {
+      "field": "Seats",
+      "type": "quantitative",
+      "axis": {"title": "Total Seats"}
+    },
+    "color": {
+      "field": "City",
+      "type": "nominal",
+      "legend": {"title": "City"}
+    },
+    "size": {
+      "field": "Seats",
+      "type": "quantitative",
+      "title": "Seats",
+      "scale": {"range": [100, 1000]}  
+    },
+    "tooltip": [
+      {"field": "City", "type": "nominal", "title": "City"},
+      {"field": "Flights", "type": "quantitative", "title": "Total Flights"},
+      {"field": "Seats", "type": "quantitative", "title": "Total Seats"}
+    ]
+  },
+  "config": {
+    "view": {"stroke": "transparent"}
+  }
+}
