@@ -1,0 +1,58 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Regional Flights Comparison",
+    "fontSize": 16,
+    "anchor": "middle",
+    "subtitle": "Total flights by region and city"
+
+  },
+   "height":400,
+    "width":200,
+
+  "data": {
+    "values": [
+      {"Region": "SE Asia", "City": "Sydney", "Flights": 150000},
+      {"Region": "SE Asia", "City": "Melbourne", "Flights": 130000},
+      {"Region": "SE Asia", "City": "Brisbane", "Flights": 50000},
+      {"Region": "NE Asia", "City": "Sydney", "Flights": 100000},
+      {"Region": "NE Asia", "City": "Melbourne", "Flights": 80000},
+      {"Region": "NE Asia", "City": "Brisbane", "Flights": 40000},
+      {"Region": "Europe", "City": "Sydney", "Flights": 60000},
+      {"Region": "Europe", "City": "Melbourne", "Flights": 55000},
+      {"Region": "Europe", "City": "Brisbane", "Flights": 30000}
+    ]
+  },
+  "mark": "bar",
+  "encoding": {
+    "x": {
+      "field": "City",
+      "type": "nominal",
+      "axis": {"title": "City"}
+    },
+    "y": {
+      "field": "Flights",
+      "type": "quantitative",
+      "axis": {"title": "Total Flights"}
+    },
+    "color": {
+      "field": "Region",
+      "type": "nominal",
+      "legend": {"title": "Region"}
+    },
+    "column": {
+      "field": "Region",
+      "type": "nominal",
+      "title": "Region"
+    },
+    "tooltip": [
+      {"field": "City", "type": "nominal", "title": "City"},
+      {"field": "Region", "type": "nominal", "title": "Region"},
+      {"field": "Flights", "type": "quantitative", "title": "Total Flights"}
+    ]
+  },
+  "config": {
+    "view": {"stroke": "transparent"},
+    "axis": {"labelFontSize": 12, "titleFontSize": 14}
+  }
+}
