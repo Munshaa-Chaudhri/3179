@@ -1,0 +1,48 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Top 10 Airlines by Total Flights",
+  "width": 600,
+  "height": 400,
+  "data": {
+    "values": [
+      { "airline": "Qantas Airways", "flights": 35000 },
+      { "airline": "Virgin Australia", "flights": 28000 },
+      { "airline": "Jetstar", "flights": 25000 },
+      { "airline": "Singapore Airlines", "flights": 15000 },
+      { "airline": "Emirates", "flights": 12000 },
+      { "airline": "Cathay Pacific Airways", "flights": 9000 },
+      { "airline": "Malaysia Airlines", "flights": 7000 },
+      { "airline": "Air New Zealand", "flights": 14000 },
+      { "airline": "China Southern Airlines", "flights": 8000 },
+      { "airline": "United Airlines", "flights": 11000 }
+    ]
+  },
+  "mark": "bar",
+  "encoding": {
+    "x": {
+      "field": "flights",
+      "type": "quantitative",
+      "axis": { "title": "Total Flights" }
+    },
+    "y": {
+      "field": "airline",
+      "type": "nominal",
+      "sort": "-x",
+      "axis": { "title": "Airline" }
+    },
+    "color": {
+      "field": "airline",
+      "type": "nominal",
+      "legend": null
+    },
+    "tooltip": [
+      { "field": "airline", "type": "nominal", "title": "Airline" },
+      { "field": "flights", "type": "quantitative", "title": "Total Flights" }
+    ]
+  },
+  "title": {
+    "text": "Top 10 Airlines by Total Flights",
+    "fontSize": 18,
+    "fontWeight": "bold"
+  }
+}
