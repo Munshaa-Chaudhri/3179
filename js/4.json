@@ -1,0 +1,247 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Flights Over Time by Region",
+    "fontSize": 16,
+    "anchor": "middle",
+    "subtitle": "Stacked area chart showing flights by region from 2003 to 2019"
+  },
+
+  "height":400,
+  "width":600,
+  "data": {
+    "values": [
+      {"Year": 2003, "Port_Region": "Africa", "All_Flights": 218},
+      {"Year": 2003, "Port_Region": "Europe", "All_Flights": 1098},
+      {"Year": 2003, "Port_Region": "Islands", "All_Flights": 1213},
+      {"Year": 2003, "Port_Region": "Middle East", "All_Flights": 490},
+      {"Year": 2003, "Port_Region": "N America", "All_Flights": 1752},
+      {"Year": 2003, "Port_Region": "NE Asia", "All_Flights": 3836},
+      {"Year": 2003, "Port_Region": "New Zealand", "All_Flights": 5531},
+      {"Year": 2003, "Port_Region": "S America", "All_Flights": 96},
+      {"Year": 2003, "Port_Region": "SE Asia", "All_Flights": 6220},
+      {"Year": 2004, "Port_Region": "Africa", "All_Flights": 431},
+      {"Year": 2004, "Port_Region": "Europe", "All_Flights": 2376},
+      {"Year": 2004, "Port_Region": "Islands", "All_Flights": 2577},
+      {"Year": 2004, "Port_Region": "Middle East", "All_Flights": 1327},
+      {"Year": 2004, "Port_Region": "N America", "All_Flights": 3861},
+      {"Year": 2004, "Port_Region": "NE Asia", "All_Flights": 8826},
+      {"Year": 2004, "Port_Region": "New Zealand", "All_Flights": 12538},
+      {"Year": 2004, "Port_Region": "S America", "All_Flights": 194},
+      {"Year": 2004, "Port_Region": "S Asia", "All_Flights": 54},
+      {"Year": 2004, "Port_Region": "SE Asia", "All_Flights": 13137},
+      {"Year": 2005, "Port_Region": "Africa", "All_Flights": 454},
+      {"Year": 2005, "Port_Region": "Europe", "All_Flights": 2679},
+      {"Year": 2005, "Port_Region": "Islands", "All_Flights": 2888},
+      {"Year": 2005, "Port_Region": "Middle East", "All_Flights": 1647},
+      {"Year": 2005, "Port_Region": "N America", "All_Flights": 4029},
+      {"Year": 2005, "Port_Region": "NE Asia", "All_Flights": 9082},
+      {"Year": 2005, "Port_Region": "New Zealand", "All_Flights": 12927},
+      {"Year": 2005, "Port_Region": "S America", "All_Flights": 259},
+      {"Year": 2005, "Port_Region": "S Asia", "All_Flights": 104},
+      {"Year": 2005, "Port_Region": "SE Asia", "All_Flights": 13837},
+      {"Year": 2006, "Port_Region": "Africa", "All_Flights": 1460},
+      {"Year": 2006, "Port_Region": "Europe", "All_Flights": 6943},
+      {"Year": 2006, "Port_Region": "Islands", "All_Flights": 9536},
+      {"Year": 2006, "Port_Region": "Middle East", "All_Flights": 5556},
+      {"Year": 2006, "Port_Region": "N America", "All_Flights": 12452},
+      {"Year": 2006, "Port_Region": "NE Asia", "All_Flights": 26572},
+      {"Year": 2006, "Port_Region": "New Zealand", "All_Flights": 29644},
+      {"Year": 2006, "Port_Region": "S America", "All_Flights": 234},
+      {"Year": 2006, "Port_Region": "S Asia", "All_Flights": 207},
+      {"Year": 2006, "Port_Region": "SE Asia", "All_Flights": 30768},
+      {"Year": 2007, "Port_Region": "Africa", "All_Flights": 1655},
+      {"Year": 2007, "Port_Region": "Europe", "All_Flights": 7751},
+      {"Year": 2007, "Port_Region": "Islands", "All_Flights": 11363},
+      {"Year": 2007, "Port_Region": "Middle East", "All_Flights": 6405},
+      {"Year": 2007, "Port_Region": "N America", "All_Flights": 13257},
+      {"Year": 2007, "Port_Region": "NE Asia", "All_Flights": 30849},
+      {"Year": 2007, "Port_Region": "New Zealand", "All_Flights": 34418},
+      {"Year": 2007, "Port_Region": "S America", "All_Flights": 246},
+      {"Year": 2007, "Port_Region": "S Asia", "All_Flights": 262},
+      {"Year": 2007, "Port_Region": "SE Asia", "All_Flights": 36363},
+      {"Year": 2008, "Port_Region": "Africa", "All_Flights": 1954},
+      {"Year": 2008, "Port_Region": "Europe", "All_Flights": 8669},
+      {"Year": 2008, "Port_Region": "Islands", "All_Flights": 13328},
+      {"Year": 2008, "Port_Region": "Middle East", "All_Flights": 7265},
+      {"Year": 2008, "Port_Region": "N America", "All_Flights": 14068},
+      {"Year": 2008, "Port_Region": "NE Asia", "All_Flights": 35381},
+      {"Year": 2008, "Port_Region": "New Zealand", "All_Flights": 38983},
+      {"Year": 2008, "Port_Region": "S America", "All_Flights": 311},
+      {"Year": 2008, "Port_Region": "S Asia", "All_Flights": 337},
+      {"Year": 2008, "Port_Region": "SE Asia", "All_Flights": 43238},
+      {"Year": 2009, "Port_Region": "Africa", "All_Flights": 2227},
+      {"Year": 2009, "Port_Region": "Europe", "All_Flights": 9907},
+      {"Year": 2009, "Port_Region": "Islands", "All_Flights": 15398},
+      {"Year": 2009, "Port_Region": "Middle East", "All_Flights": 8180},
+      {"Year": 2009, "Port_Region": "N America", "All_Flights": 14891},
+      {"Year": 2009, "Port_Region": "NE Asia", "All_Flights": 39857},
+      {"Year": 2009, "Port_Region": "New Zealand", "All_Flights": 43261},
+      {"Year": 2009, "Port_Region": "S America", "All_Flights": 422},
+      {"Year": 2009, "Port_Region": "S Asia", "All_Flights": 413},
+      {"Year": 2009, "Port_Region": "SE Asia", "All_Flights": 48622},
+      {"Year": 2010, "Port_Region": "Africa", "All_Flights": 2436},
+      {"Year": 2010, "Port_Region": "Europe", "All_Flights": 10771},
+      {"Year": 2010, "Port_Region": "Islands", "All_Flights": 16431},
+      {"Year": 2010, "Port_Region": "Middle East", "All_Flights": 8947},
+      {"Year": 2010, "Port_Region": "N America", "All_Flights": 16118},
+      {"Year": 2010, "Port_Region": "NE Asia", "All_Flights": 43387},
+      {"Year": 2010, "Port_Region": "New Zealand", "All_Flights": 46056},
+      {"Year": 2010, "Port_Region": "S America", "All_Flights": 602},
+      {"Year": 2010, "Port_Region": "S Asia", "All_Flights": 421},
+      {"Year": 2010, "Port_Region": "SE Asia", "All_Flights": 53698},
+      {"Year": 2011, "Port_Region": "Africa", "All_Flights": 2502},
+      {"Year": 2011, "Port_Region": "Europe", "All_Flights": 11372},
+      {"Year": 2011, "Port_Region": "Islands", "All_Flights": 18111},
+      {"Year": 2011, "Port_Region": "Middle East", "All_Flights": 9371},
+      {"Year": 2011, "Port_Region": "N America", "All_Flights": 16943},
+      {"Year": 2011, "Port_Region": "NE Asia", "All_Flights": 46467},
+      {"Year": 2011, "Port_Region": "New Zealand", "All_Flights": 48286},
+      {"Year": 2011, "Port_Region": "S America", "All_Flights": 844},
+      {"Year": 2011, "Port_Region": "S Asia", "All_Flights": 574},
+      {"Year": 2011, "Port_Region": "SE Asia", "All_Flights": 57733},
+      {"Year": 2012, "Port_Region": "Africa", "All_Flights": 1770},
+      {"Year": 2012, "Port_Region": "Europe", "All_Flights": 4126},
+      {"Year": 2012, "Port_Region": "Islands", "All_Flights": 13708},
+      {"Year": 2012, "Port_Region": "Middle East", "All_Flights": 10873},
+      {"Year": 2012, "Port_Region": "N America", "All_Flights": 13242},
+      {"Year": 2012, "Port_Region": "NE Asia", "All_Flights": 28816},
+      {"Year": 2012, "Port_Region": "New Zealand", "All_Flights": 40415},
+      {"Year": 2012, "Port_Region": "S America", "All_Flights": 1241},
+      {"Year": 2012, "Port_Region": "S Asia", "All_Flights": 103},
+      {"Year": 2012, "Port_Region": "SE Asia", "All_Flights": 59735},
+      {"Year": 2013, "Port_Region": "Africa", "All_Flights": 1737},
+      {"Year": 2013, "Port_Region": "Europe", "All_Flights": 3110},
+      {"Year": 2013, "Port_Region": "Islands", "All_Flights": 14254},
+      {"Year": 2013, "Port_Region": "Middle East", "All_Flights": 14107},
+      {"Year": 2013, "Port_Region": "N America", "All_Flights": 12860},
+      {"Year": 2013, "Port_Region": "NE Asia", "All_Flights": 29043},
+      {"Year": 2013, "Port_Region": "New Zealand", "All_Flights": 40745},
+      {"Year": 2013, "Port_Region": "S America", "All_Flights": 1125},
+      {"Year": 2013, "Port_Region": "S Asia", "All_Flights": 491},
+      {"Year": 2013, "Port_Region": "SE Asia", "All_Flights": 62949},
+      {"Year": 2014, "Port_Region": "Africa", "All_Flights": 1700},
+      {"Year": 2014, "Port_Region": "Europe", "All_Flights": 2395},
+      {"Year": 2014, "Port_Region": "Islands", "All_Flights": 14463},
+      {"Year": 2014, "Port_Region": "Middle East", "All_Flights": 14729},
+      {"Year": 2014, "Port_Region": "N America", "All_Flights": 12790},
+      {"Year": 2014, "Port_Region": "NE Asia", "All_Flights": 26765},
+      {"Year": 2014, "Port_Region": "New Zealand", "All_Flights": 41717},
+      {"Year": 2014, "Port_Region": "S America", "All_Flights": 1092},
+      {"Year": 2014, "Port_Region": "S Asia", "All_Flights": 1418},
+      {"Year": 2014, "Port_Region": "SE Asia", "All_Flights": 67201},
+      {"Year": 2015, "Port_Region": "Africa", "All_Flights": 1649},
+      {"Year": 2015, "Port_Region": "Europe", "All_Flights": 2168},
+      {"Year": 2015, "Port_Region": "Islands", "All_Flights": 14937},
+      {"Year": 2015, "Port_Region": "Middle East", "All_Flights": 15209},
+      {"Year": 2015, "Port_Region": "N America", "All_Flights": 13815},
+      {"Year": 2015, "Port_Region": "NE Asia", "All_Flights": 27456},
+      {"Year": 2015, "Port_Region": "New Zealand", "All_Flights": 42632},
+      {"Year": 2015, "Port_Region": "S America", "All_Flights": 1101},
+      {"Year": 2015, "Port_Region": "S Asia", "All_Flights": 1796},
+      {"Year": 2015, "Port_Region": "SE Asia", "All_Flights": 65268},
+      {"Year": 2016, "Port_Region": "Africa", "All_Flights": 1556},
+      {"Year": 2016, "Port_Region": "Europe", "All_Flights": 2394},
+      {"Year": 2016, "Port_Region": "Islands", "All_Flights": 15042},
+      {"Year": 2016, "Port_Region": "Middle East", "All_Flights": 15062},
+      {"Year": 2016, "Port_Region": "N America", "All_Flights": 14477},
+      {"Year": 2016, "Port_Region": "NE Asia", "All_Flights": 29906},
+      {"Year": 2016, "Port_Region": "New Zealand", "All_Flights": 44342},
+      {"Year": 2016, "Port_Region": "S America", "All_Flights": 934},
+      {"Year": 2016, "Port_Region": "S Asia", "All_Flights": 1821},
+      {"Year": 2016, "Port_Region": "SE Asia", "All_Flights": 67964},
+      {"Year": 2017, "Port_Region": "Africa", "All_Flights": 1463},
+      {"Year": 2017, "Port_Region": "Europe", "All_Flights": 2417},
+      {"Year": 2017, "Port_Region": "Islands", "All_Flights": 15260},
+      {"Year": 2017, "Port_Region": "Middle East", "All_Flights": 14967},
+      {"Year": 2017, "Port_Region": "N America", "All_Flights": 14314},
+      {"Year": 2017, "Port_Region": "NE Asia", "All_Flights": 29765},
+      {"Year": 2017, "Port_Region": "New Zealand", "All_Flights": 45478},
+      {"Year": 2017, "Port_Region": "S America", "All_Flights": 1050},
+      {"Year": 2017, "Port_Region": "S Asia", "All_Flights": 1782},
+      {"Year": 2017, "Port_Region": "SE Asia", "All_Flights": 69164},  
+      {"Year": 2018, "Port_Region": "Africa", "All_Flights": 1510},
+      {"Year": 2018, "Port_Region": "Europe", "All_Flights": 2296},
+      {"Year": 2018, "Port_Region": "Islands", "All_Flights": 15872},
+      {"Year": 2018, "Port_Region": "Middle East", "All_Flights": 14788},
+      {"Year": 2018, "Port_Region": "N America", "All_Flights": 15209},
+      {"Year": 2018, "Port_Region": "NE Asia", "All_Flights": 32011},
+      {"Year": 2018, "Port_Region": "New Zealand", "All_Flights": 47494},
+      {"Year": 2018, "Port_Region": "S America", "All_Flights": 1358},
+      {"Year": 2018, "Port_Region": "S Asia", "All_Flights": 1977},
+      {"Year": 2018, "Port_Region": "SE Asia", "All_Flights": 71415},
+      {"Year": 2019, "Port_Region": "Africa", "All_Flights": 1507},
+      {"Year": 2019, "Port_Region": "Europe", "All_Flights": 2424},
+      {"Year": 2019, "Port_Region": "Islands", "All_Flights": 16289},
+      {"Year": 2019, "Port_Region": "Middle East", "All_Flights": 16289},
+      {"Year": 2019, "Port_Region": "N America", "All_Flights": 15634},
+      {"Year": 2019, "Port_Region": "NE Asia", "All_Flights": 41083},
+      {"Year": 2019, "Port_Region": "New Zealand", "All_Flights": 47564},
+      {"Year": 2019, "Port_Region": "S America", "All_Flights": 1536}
+
+
+    ]
+    
+  },
+  "params": [
+    {
+      "name": "RegionFilter",
+      "value": null,  
+      "bind": {
+        "input": "select",
+        "options": [null, "SE Asia", "NE Asia", "Europe", "Middle East", "Africa", "N America", "S America", "New Zealand", "Islands", "S Asia"],
+        "labels": ["All Regions", "SE Asia", "NE Asia", "Europe", "Middle East", "Africa", "N America", "S America", "New Zealand", "Islands", "S Asia"]
+      }
+    }
+  ],
+  "transform": [
+    {
+      "filter": "RegionFilter === null || datum.Port_Region === RegionFilter"
+    }
+  ],
+  "mark": {
+    "type": "area",
+    "line": {
+      "color": "darkgray"
+    }
+  },
+  "encoding": {
+    "x": {
+      "field": "Year",
+      "type": "ordinal",
+      "axis": {
+        "title": "Year"
+      }
+    },
+    "y": {
+      "field": "All_Flights",
+      "type": "quantitative",
+      "axis": {
+        "title": "Total Flights"
+      }
+    },
+    "color": {
+      "field": "Port_Region",
+      "type": "nominal",
+      "legend": {
+        "title": "Region"
+      }
+    },
+    "tooltip": [
+      {"field": "Year", "type": "ordinal", "title": "Year"},
+      {"field": "Port_Region", "type": "nominal", "title": "Region"},
+      {"field": "All_Flights", "type": "quantitative", "title": "Total Flights", "format": ","}
+    ]
+  },
+  "config": {
+    "view": {
+      "stroke": "transparent"
+    }
+  }
+}
+
+
+
+
+
+
